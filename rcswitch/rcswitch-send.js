@@ -1,4 +1,4 @@
-var RcSwitch = require('rcswitch');
+var RcSwitch = require('rcswitch2');
 
 module.exports = function (RED) {
     function RCSwitchNodeSend(config) {
