@@ -9,7 +9,7 @@ module.exports = function (RED) {
             var code = msg.payload || config.code;
             var pin = parseInt(msg.pin || config.pin);
             if (typeof code === 'number') {
-                code = code.toString(2);
+                code = code.toString(2).padStart(24, '0'); // TODO: Configurable padding
             }
             rcswitch.enableTransmit(pin);
             rcswitch.send(code);
