@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rcswitch receive', {
+        category: 'input',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ""},
+            pin: {value: ""},
+            interval: {value: 500}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "rcswitch.png",
+        label: function () {
+            return this.name || "RC Switch Receive";
+        },
+        align: 'left',
+        oneditprepare: function() {
+            $("#node-input-pin").typedInput({
+                default: 'num',
+                types: ['msg', 'flow', 'global', 'num']
+            });
+            $("#node-input-interval").typedInput({
+                default: 'num',
+                types: ['num']
+            });
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="rcswitch receive">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row node-input-pin">
+         <label for="node-input-pin"><i class="fa fa-map-pin"></i> Pin</label>
+         <input type="text" id="node-input-pin" placeholder="Pin">
+    </div>
+    <div class="form-row node-input-interval">
+         <label for="node-input-interval"><i class="fa fa-clock-o"></i> Interval (ms)</label>
+         <input type="text" id="node-input-interval" placeholder="Interval">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="rcswitch receive">
+    <p>A node that reads from rcswitch devices</p>
+</script>

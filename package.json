@@ -1,17 +1,35 @@
 {
-    "name"         : "node-red-contrib-rcswitch",
-    "author"	   : "tlindener",
-    "version"      : "0.0.2",
-    "description"  : "A rcswitch node for node-red",
-  "dependencies": {
-    "rcswitch": "*"
-   
+  "name": "node-red-contrib-rcswitch3",
+  "contributors": [
+    "tlindener",
+    "Oleg Krasnikov <a.insolite@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "description": "A rcswitch nodes for node-red",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/insolite/node-red-contrib-rcswitch3.git"
   },
-    "keywords": [ "node-red","rcswitch" ],
-    "node-red"     : {
-        "nodes": {
-            "rcswitch": "rcswitch/rcswitch.js"
-        }
+  "dependencies": {
+    "rcswitch2": "https://github.com/insolite/node-rcswitch2/tarball/master"
+  },
+  "keywords": [
+    "node-red",
+    "rcswitch",
+    "rpi",
+    "raspberrypi",
+    "rcswitch",
+    "433",
+    "rf"
+  ],
+  "bugs": {
+    "url": "https://github.com/insolite/node-red-contrib-rcswitch3/issues"
+  },
+  "homepage": "https://github.com/insolite/node-red-contrib-rcswitch3",
+  "node-red": {
+    "nodes": {
+      "rcswitch-send": "rcswitch/rcswitch-send.js",
+      "rcswitch-receive": "rcswitch/rcswitch-receive.js"
     }
-
+  }
 }

@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rcswitch send', {
+        category: 'output',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ""},
+            pin: {value: ""},
+            code: {value: ""}
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "rcswitch.png",
+        label: function () {
+            return this.name || "RC Switch Send";
+        },
+        align: 'right',
+        oneditprepare: function() {
+            $("#node-input-pin").typedInput({
+                default: 'num',
+                types: ['msg', 'flow', 'global', 'num']
+            });
+            $("#node-input-code").typedInput({
+                default: 'num',
+                types: ['msg', 'flow', 'global', 'str', 'num']
+            });
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="rcswitch send">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row node-input-pin">
+         <label for="node-input-pin"><i class="fa fa-map-pin"></i> Pin</label>
+         <input type="text" id="node-input-pin" placeholder="Pin">
+    </div>
+    <div class="form-row node-input-code">
+         <label for="node-input-code"><i class="fa fa-calculator"></i> Code</label>
+         <input type="text" id="node-input-code" placeholder="Code">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="rcswitch send">
+    <p>A node that controls rcswitch devices</p>
+</script>
